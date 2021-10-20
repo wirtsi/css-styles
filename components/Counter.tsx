@@ -5,7 +5,8 @@ import React, {
   useState,
 } from "react";
 import Icon from "./Icon";
-import { combineClassNames, prefixedClassNames } from "../helpers/classnames";
+import styles from './Counter.module.css'
+import classnames from 'classnames'
 
 type ControlButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -13,14 +14,12 @@ const MinusButton: FC<ControlButtonProps> = ({ disabled, ...otherProps }) => {
   return (
     <button
       {...otherProps}
-      className={prefixedClassNames("counter__btn", "counter__btn--left")}
+      className={classnames(styles.btn, styles.btnLeft)}
+
       type="button"
     >
       <Icon
-        className={combineClassNames({
-          prefix: "counter__icon",
-          plain: "v5-icon--minus-mid",
-        })}
+        className={classnames(styles.icon, 'v5-icon--minus-mid')}
         style={{fontSize: 24}}
       ></Icon>
     </button>
@@ -31,14 +30,11 @@ const PlusButton: FC<ControlButtonProps> = ({ disabled, ...otherProps }) => {
   return (
     <button
       {...otherProps}
-      className={prefixedClassNames("counter__btn", "counter__btn--right")}
+      className={classnames(styles.btn, styles.btnRight)}
       type="button"
     >
       <Icon
-        className={combineClassNames({
-          prefix: "counter__icon",
-          plain: "v5-icon--plus-mid",
-        })}
+        className={classnames(styles.icon, 'v5-icon--plus-mid')}
         style={{fontSize: 24}}
       ></Icon>
     </button>
