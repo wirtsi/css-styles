@@ -2,6 +2,7 @@ import Counter from "../components/Counter";
 import Icon from "../components/Icon";
 import Head from "next/head";
 import classnames from "classnames";
+import  { btn } from "../components/Counter.module.scss";
 
 export default function Home() {
   return (
@@ -29,8 +30,10 @@ export default function Home() {
       <footer>
         {/* This variable should only get the global scope */} 
         <Icon
-          className={classnames("v5-icon--eye-mid")}
-          style={{ fontSize: 24, color: "var(--buttonColor)" }}
+          className={classnames("v5-icon--eye-mid", btn)}
+          style={{ fontSize:24 }}
+          // className={classnames("v5-icon--eye-mid")}
+          // style={{ fontSize: 24, color: "var(--buttonColor)" }}
         ></Icon>
       </footer>
     </div>

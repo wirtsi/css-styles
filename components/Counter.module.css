@@ -1,6 +1,5 @@
-
 .counter {
-  --buttonColor: #99aa11;
+  --buttonColor: #ff0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
