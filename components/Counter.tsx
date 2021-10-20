@@ -5,8 +5,8 @@ import React, {
   useState,
 } from "react";
 import Icon from "./Icon";
-import styles from './Counter.module.css'
-import classnames from 'classnames'
+import styles from "./Counter.module.css";
+import classnames from "classnames";
 
 type ControlButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -15,12 +15,11 @@ const MinusButton: FC<ControlButtonProps> = ({ disabled, ...otherProps }) => {
     <button
       {...otherProps}
       className={classnames(styles.btn, styles.btnLeft)}
-
       type="button"
     >
       <Icon
-        className={classnames(styles.icon, 'v5-icon--minus-mid')}
-        style={{fontSize: 24}}
+        className={classnames(styles.icon, "v5-icon--minus-mid")}
+        style={{ fontSize: 24 }}
       ></Icon>
     </button>
   );
@@ -34,8 +33,8 @@ const PlusButton: FC<ControlButtonProps> = ({ disabled, ...otherProps }) => {
       type="button"
     >
       <Icon
-        className={classnames(styles.icon, 'v5-icon--plus-mid')}
-        style={{fontSize: 24}}
+        className={classnames(styles.icon, "v5-icon--plus-mid")}
+        style={{ fontSize: 24 }}
       ></Icon>
     </button>
   );
@@ -78,20 +77,14 @@ const Counter: FC<CounterProps> = ({
   };
 
   return (
-    <div
-      {...otherProps}
-      className={combineClassNames({
-        prefix: "counter",
-        plain: className,
-      })}
-    >
+    <div {...otherProps} className={classnames(styles.counter, className)}>
       <MinusButton
         aria-label={minusAriaLabel}
         disabled={isDisabled}
         onClick={() => updateQuantity(-1)}
       />
       <input
-        className={prefixedClassNames("counter__input")}
+        className={classnames(styles.counterInput)}
         value={value}
         type="text"
         aria-label={inputAriaLabel}
