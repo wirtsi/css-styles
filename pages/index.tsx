@@ -10,10 +10,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
-          href="https://shop-common-cdn-prod.mediazs.com/shop-styleguide/v3/css/utils.css"
-        />
-        <link
-          rel="stylesheet"
           href="https://shop-common-cdn-prod.mediazs.com/shop-icon-fonts/v5/css/shop-icon-fonts.css"
         />
         <link
