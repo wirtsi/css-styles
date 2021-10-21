@@ -1,5 +1,7 @@
 import Counter from "../components/Counter";
 import Head from "next/head";
+import { FlatBox } from "../components/FlatBox";
+import { Radio } from "../components/Radio";
 
 export default function Home() {
   return (
@@ -16,14 +18,27 @@ export default function Home() {
           rel="stylesheet"
           href="https://shop-common-cdn-prod.mediazs.com/shop-styleguide/v3/css/zooplus-theme.css"
         />
-      </Head>
 
-      <main style={{margin: 16}}>
+        <link
+          rel="stylesheet"
+          href="https://shop-common-cdn-prod.mediazs.com/shop-styleguide/v3/css/bundles/zooplus-components.css"
+        />
+      </Head>
+      <header>
+        <FlatBox variant="grey" rounded={true}>
+          <form style={{display: "inline-block"}}>
+            <Radio>Light</Radio>
+            <Radio>Dark</Radio>
+          </form>
+        </FlatBox>
+      </header>
+
+      <main style={{ margin: 16 }}>
         <Counter
           minusAriaLabel="Minus"
           plusAriaLabel="Plus"
           inputAriaLabel="Input"
-          onKeyUp={(evt) => console.log(evt)}
+          onKeyUp={() => console.log("Changed")}
           onQuantityModified={() => console.log("bar")}
         />
       </main>
