@@ -1,6 +1,6 @@
 import React, { FC, HTMLProps } from "react";
 import classnames from "classnames";
-import styles from "./Label.module.css";
+import styles from "./Label.module.scss";
 
 export interface LabelProps extends HTMLProps<HTMLLabelElement> {
   isRequired?: boolean;

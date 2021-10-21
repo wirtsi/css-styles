@@ -5,7 +5,7 @@ import Head from "next/head";
 import classnames from "classnames";
 import { FlatBox } from "../components/FlatBox";
 import { Radio } from "../components/Radio";
-import { btn } from "../components/Counter.module.css";
+import { btn } from "../components/Counter.module.scss";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");

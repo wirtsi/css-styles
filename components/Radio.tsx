@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classnames from "classnames";
 import { Label } from "./Label";
-import styles from "./Radio.module.css";
+import styles from "./Radio.module.scss";
 
 export interface RadioProps extends React.ComponentPropsWithoutRef<"input"> {
   hasError?: boolean;

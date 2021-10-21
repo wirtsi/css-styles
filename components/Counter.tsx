@@ -5,7 +5,7 @@ import React, {
   useState,
 } from "react";
 import Icon from "./Icon";
-import styles from "./Counter.module.css";
+import styles from "./Counter.module.scss";
 import classnames from "classnames";
 
 type ControlButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;

@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 
 import classnames from 'classnames';
-import styles from "./FlatBox.module.css";
+import styles from "./FlatBox.module.scss";
 
 export type FlatBoxProps = HTMLAttributes<HTMLDivElement> & {
   variant: 'grey' | 'white';
