@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import Counter from "../components/Counter";
 import Icon from "../components/Icon";
 import Head from "next/head";
@@ -10,10 +10,10 @@ import { btn } from "../components/Counter.module.css";
 export default function Home() {
   const [theme, setTheme] = useState("light");
 
-  const changeTheme= (theme:string) => {
+  const changeTheme = (theme: string) => {
     document.documentElement.setAttribute("data-theme", theme);
     setTheme(theme);
-  }
+  };
   return (
     <div>
       <Head>
@@ -27,9 +27,21 @@ export default function Home() {
       </Head>
       <header>
         <FlatBox variant="grey">
-          <form >
-            <Radio id="light" checked={theme==="light"} onChange={(evt) => changeTheme(evt.target.id)}>Light</Radio>
-            <Radio id="dark" checked={theme=="dark"} onChange={(evt)=> changeTheme(evt.target.id)}>Dark</Radio>
+          <form>
+            <Radio
+              id="light"
+              checked={theme === "light"}
+              onChange={(evt) => changeTheme(evt.target.id)}
+            >
+              Light
+            </Radio>
+            <Radio
+              id="dark"
+              checked={theme == "dark"}
+              onChange={(evt) => changeTheme(evt.target.id)}
+            >
+              Dark
+            </Radio>
           </form>
         </FlatBox>
       </header>
@@ -46,6 +58,7 @@ export default function Home() {
 
       <footer>
         {/* This variable should only get the global scope */}
+        This is to demonstrate scoping of css variables&nbsp; 
         <Icon
           className={classnames("v5-icon--eye-mid", btn)}
           style={{ fontSize: 24 }}
