@@ -1,5 +1,8 @@
+@import "../styles/variables.global.scss";
+
+$buttonColor: #00ee11;
+
 .counter {
-  --buttonColor: #ff0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,8 +29,8 @@
 .btn {
   border: none;
   color: #fff; 
-  /* this sees the variable scope from the parent counter */
-  background-color: var(--buttonColor); 
+  /* this should only see the local buttonColor */
+  background-color: $buttonColor; 
   min-width: 30px;
   width: 30px;
   cursor: pointer;
