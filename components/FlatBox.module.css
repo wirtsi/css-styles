@@ -1,0 +1,9 @@
+.grey {
+    border: 2px solid #e6e6e6;
+}
+
+.flatbox {
+    position: relative;
+    padding: .7142857143rem;
+    background-color: var(--backgroundColor);
+}
