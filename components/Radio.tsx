@@ -18,9 +18,9 @@ export const Radio: FC<RadioProps> = ({
   const { disabled, id } = otherProps;
 
   return (
-    <div className={classnames(styles.radioWrapper, classnames)}>
+    <div className={classnames("radioWrapper", classnames)}>
       <input
-        className={classnames(styles.radioInput)}
+        className={classnames("radioInput")}
         type="radio"
         checked={checked}
         {...otherProps}
@@ -33,6 +33,18 @@ export const Radio: FC<RadioProps> = ({
       >
         {children}
       </Label>
+      <style jsx>
+        {`
+          .radioWrapper {
+            position: relative;
+            display: inline-block;
+            margin-right: 1.0714285714rem;
+          }
+          .radioInput {
+            cursor: pointer;
+          }
+        `}
+      </style>
     </div>
   );
 };

@@ -5,7 +5,14 @@ import Head from "next/head";
 import classnames from "classnames";
 import { FlatBox } from "../components/FlatBox";
 import { Radio } from "../components/Radio";
-import { btn } from "../components/Counter.module.scss";
+import { buttonColor } from "../styles/variables";
+
+import css from "styled-jsx/css";
+
+const { className: styleOverride, styles } = css.resolve`
+  font-size: 24px;
+  color: ${buttonColor};
+`;
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
@@ -58,16 +65,38 @@ export default function Home() {
         </main>
 
         <footer>
-          {/* This variable should only get the global scope */}
+          {/* This is how to override children's CSS */}
           This is to demonstrate scoping of css variables&nbsp;
-          <Icon
-            className={classnames("v5-icon--eye-mid", btn)}
-            style={{ fontSize: 24 }}
-            // className={classnames("v5-icon--eye-mid")}
-            // style={{ fontSize: 24, color: "var(--buttonColor)" }}
-          ></Icon>
+          <Icon className={classnames("v5-icon--eye-mid", styleOverride)}>
+            {styles}
+          </Icon>
         </footer>
       </div>
+      <style global jsx>{`
+  
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+button,html [type="button"],[type="reset"],[type="submit"] {
+    -webkit-appearance: button
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+button,html [type="button"],[type="reset"],[type="submit"] {
+    -webkit-appearance: button
+}
+      `}</style>
     </div>
   );
 }

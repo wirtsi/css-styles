@@ -1,10 +1,9 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from "react";
 
-import classnames from 'classnames';
-import styles from "./FlatBox.module.scss";
+import classnames from "classnames";
 
 export type FlatBoxProps = HTMLAttributes<HTMLDivElement> & {
-  variant: 'grey' | 'white';
+  variant: "grey" | "white";
 };
 
 export const FlatBox: FC<FlatBoxProps> = ({
@@ -15,10 +14,23 @@ export const FlatBox: FC<FlatBoxProps> = ({
 }) => {
   return (
     <div
-    className={classnames(styles.flatbox, {[styles.grey]: variant === "grey"})}
+      className={classnames("flatbox",{
+        grey: variant === "grey",
+      })}
       {...otherProps}
     >
       {children}
+      <style jsx>{`
+        .grey {
+          border: 2px solid #e6e6e6;
+        }
+
+        .flatbox {
+          position: relative;
+          padding: 0.7142857143rem;
+          background-color: var(--backgroundColor);
+        }
+      `}</style>
     </div>
   );
 };

@@ -5,8 +5,8 @@ import React, {
   useState,
 } from "react";
 import Icon from "./Icon";
-import styles from "./Counter.module.scss";
 import classnames from "classnames";
+import { buttonColor} from "../styles/variables"
 
 type ControlButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -14,13 +14,30 @@ const MinusButton: FC<ControlButtonProps> = ({ disabled, ...otherProps }) => {
   return (
     <button
       {...otherProps}
-      className={classnames(styles.btn, styles.btnLeft)}
+      className={classnames("btn", "btnLeft")}
       type="button"
     >
       <Icon
-        className={classnames(styles.icon, "v5-icon--minus-mid")}
+        className={classnames("v5-icon--minus-mid")}
         style={{ fontSize: 24 }}
       ></Icon>
+      <style jsx>{`
+        .btn {
+          border: none;
+          color: #fff;
+          background-color: ${buttonColor};
+          min-width: 30px;
+          width: 30px;
+          cursor: pointer;
+          padding: 0;
+        }
+        .btnLeft {
+          border-radius: 5px 0 0 5px;
+        }
+        .btnRight {
+          border-radius: 0 5px 5px 0;
+        }
+      `}</style>
     </button>
   );
 };
@@ -29,13 +46,31 @@ const PlusButton: FC<ControlButtonProps> = ({ disabled, ...otherProps }) => {
   return (
     <button
       {...otherProps}
-      className={classnames(styles.btn, styles.btnRight)}
+      className={classnames("btn", "btnRight")}
       type="button"
     >
       <Icon
-        className={classnames(styles.icon, "v5-icon--plus-mid")}
+        className={classnames("v5-icon--plus-mid")}
         style={{ fontSize: 24 }}
       ></Icon>
+      <style jsx>{`
+        .btn {
+          border: none;
+          color: #fff;
+          /* this should only see the local buttonColor */
+          background-color: ${buttonColor};
+          min-width: 30px;
+          width: 30px;
+          cursor: pointer;
+          padding: 0;
+        }
+        .btnLeft {
+          border-radius: 5px 0 0 5px;
+        }
+        .btnRight {
+          border-radius: 0 5px 5px 0;
+        }
+      `}</style>
     </button>
   );
 };
@@ -77,14 +112,14 @@ const Counter: FC<CounterProps> = ({
   };
 
   return (
-    <div {...otherProps} className={classnames(styles.counter, className)}>
+    <div {...otherProps} className={classnames("counter", className)}>
       <MinusButton
         aria-label={minusAriaLabel}
         disabled={isDisabled}
         onClick={() => updateQuantity(-1)}
       />
       <input
-        className={classnames(styles.counterInput)}
+        className={classnames("counterInput")}
         value={value}
         type="text"
         aria-label={inputAriaLabel}
@@ -97,6 +132,27 @@ const Counter: FC<CounterProps> = ({
         disabled={isDisabled}
         onClick={() => updateQuantity(1)}
       />
+      <style jsx>
+        {`
+          .counter {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            width: 90px;
+            height: 36px;
+          }
+          .counterInput {
+            background-color: transparent;
+            width: 30px;
+            padding: 0;
+            text-align: center;
+            border-radius: 0;
+            border: none;
+          }
+        `}
+      </style>
     </div>
   );
 };
