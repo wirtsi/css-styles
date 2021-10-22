@@ -7,6 +7,10 @@ import { FlatBox } from "../components/FlatBox";
 import { Radio } from "../components/Radio";
 import { buttonColor } from "../styles/variables";
 
+import homer1 from '../public/homer1.png';
+import homer2 from '../public/homer2.png';
+
+
 import css from "styled-jsx/css";
 
 const { className: styleOverride, styles } = css.resolve`
@@ -50,7 +54,18 @@ export default function Home() {
                 Dark
               </Radio>
             </form>
-            <div className="logo"></div>
+            <div className="logo">
+              <style jsx>{`
+                background-image: url(/static/homer1.png);
+                position: absolute;
+                height: 32px;
+                width: 32px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                right: 16px;
+                top: 4px;
+              `}</style>
+            </div>
           </FlatBox>
         </header>
 
@@ -65,38 +80,12 @@ export default function Home() {
         </main>
 
         <footer>
-          {/* This is how to override children's CSS */}
-          This is to demonstrate scoping of css variables&nbsp;
+          With styled jsx variables are just JS variables&nbsp;
           <Icon className={classnames("v5-icon--eye-mid", styleOverride)}>
             {styles}
           </Icon>
         </footer>
       </div>
-      <style global jsx>{`
-  
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-button,html [type="button"],[type="reset"],[type="submit"] {
-    -webkit-appearance: button
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-button,html [type="button"],[type="reset"],[type="submit"] {
-    -webkit-appearance: button
-}
-      `}</style>
     </div>
   );
 }
