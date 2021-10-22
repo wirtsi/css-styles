@@ -43,6 +43,7 @@ export default function Home() {
               Dark
             </Radio>
           </form>
+          <div className="logo"></div>
         </FlatBox>
       </header>
 
