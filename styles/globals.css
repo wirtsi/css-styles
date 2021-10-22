@@ -14,28 +14,3 @@ html [type="button"],
 [type="submit"] {
   -webkit-appearance: button;
 }
-
-:root {
-  --buttonColor: #3344aa;
-  --backgroundColor: #ffffff;
-  --fontColor: #000000;
-  --logo: url(../public/homer1.png);
-}
-
-[data-theme="dark"] {
-  --buttonColor: pink;
-  --backgroundColor: #222222;
-  --fontColor: #eeeeee;
-  --logo: url(../public/homer2.png);
-}
-
-.logo {
-  background-image: var(--logo);
-  position: absolute;
-  height: 32px;
-  width: 32px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: 16px;
-  top: 4px;
-}

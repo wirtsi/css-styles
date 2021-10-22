@@ -5,7 +5,8 @@ import Head from "next/head";
 import classnames from "classnames";
 import { FlatBox } from "../components/FlatBox";
 import { Radio } from "../components/Radio";
-import { btn } from "../components/Counter.module.css";
+import { Logo } from "../components/Logo";
+import styles from "../components/Counter.module.css";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
@@ -43,7 +44,7 @@ export default function Home() {
               Dark
             </Radio>
           </form>
-          <div className="logo"></div>
+          <Logo />
         </FlatBox>
       </header>
 
@@ -59,9 +60,9 @@ export default function Home() {
 
       <footer>
         {/* This variable should only get the global scope */}
-        This is to demonstrate scoping of css variables&nbsp; 
+        This is to demonstrate scoping of css variables (this is the global style vs the local style of the buttons above)&nbsp;
         <Icon
-          className={classnames("v5-icon--eye-mid", btn)}
+          className={classnames("v5-icon--eye-mid", styles.btn)}
           style={{ fontSize: 24 }}
           // className={classnames("v5-icon--eye-mid")}
           // style={{ fontSize: 24, color: "var(--buttonColor)" }}

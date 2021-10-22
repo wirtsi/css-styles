@@ -1,0 +1,13 @@
+:root {
+  --buttonColor: #3344aa;
+  --backgroundColor: #ffffff;
+  --fontColor: #000000;
+  --logo: url(../public/homer1.png);
+}
+
+[data-theme="dark"] {
+  --buttonColor: pink;
+  --backgroundColor: #222222;
+  --fontColor: #eeeeee;
+  --logo: url(../public/homer2.png);
+}
