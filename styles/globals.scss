@@ -11,3 +11,13 @@ body {
 button,html [type="button"],[type="reset"],[type="submit"] {
     -webkit-appearance: button
 }
+
+.backdrop {
+  @include global-themify() {
+    background: t("bg");
+    color: t("color");
+  }
+  width: 100vw;
+  height: 100vh;
+}
+

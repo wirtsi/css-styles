@@ -5,7 +5,7 @@ $themes: (
     logo: url(../public/homer1.png),
   ),
   dark: (
-    bg: linear-gradient(#000, #222),
+    bg: linear-gradient(#000, #444),
     color: white,
     logo: url(../public/homer2.png),
   ),
@@ -13,7 +13,26 @@ $themes: (
 
 $theme-map: ();
 
-@mixin themed() {
+// we must use two different theming methods. One that works inside a 
+// SCSS module and one for global styles
+@mixin module-themify($themes: $themes) {
+  @each $theme, $map in $themes {
+
+    :global(.theme-#{$theme}) & { 
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+
+@mixin global-themify() {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {
       $theme-map: () !global;
@@ -32,28 +51,7 @@ $theme-map: ();
   }
 }
 
+// silly lookup funtion to get values from $themes
 @function t($key) {
   @return map-get($theme-map, $key);
-}
-
-.backdrop {
-  @include themed() {
-    background: t("bg");
-    color: t("color");
-  }
-  width: 100vw;
-  height: 100vh;
-}
-
-.logo {
-  @include themed() {
-    background-image: t("logo");
-  }
-  position: absolute;
-  height: 32px;
-  width: 32px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: 16px;
-  top: 4px;
 }
