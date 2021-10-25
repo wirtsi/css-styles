@@ -1,7 +1,6 @@
 import React, { FC, HTMLProps } from "react";
 import classnames from "classnames";
 import styles from "./Logo.module.css";
-import homer1 from "../public/homer1.png";
 
 export const Logo: FC<HTMLProps<HTMLLabelElement>> = ({
   children,
@@ -10,7 +9,6 @@ export const Logo: FC<HTMLProps<HTMLLabelElement>> = ({
   return (
     <div className={classnames(className, styles.logo)}>
       <style jsx>{`
-        background-image: url(${homer1});
         position: absolute;
         height: 32px;
         width: 32px;
