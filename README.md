@@ -1,6 +1,5 @@
 # CSS Playground
 
-There are a number of branches in this repo.
+This branch showcases the external CSS approach. 
 
-* External CSS: Describes the current setup with having an external style
-sheet and the react components referencing the classes there
+See https://wiki.web.zooplus.de/display/ARC/Decision+Log++%7C+React+CSS+integration+patterns
