@@ -1,8 +1,8 @@
 import React from "react";
 import { AppProps } from "next/app";
 
-import "../styles/globals.css";
-import "../styles/variables.css";
+//needed to load global overrides
+import {} from "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
